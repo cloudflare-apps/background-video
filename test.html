@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BackgroundVideo Test Page</title>
+    <script>
+      INSTALL_OPTIONS = {
+        "url": "https://www.youtube.com/watch?v=qREKP9oijWI", // AXwk0d1LkY8
+        "selector": "h1", // body
+        "aspectRatio": "16:9",
+        "customAspectRatio": "16:9"
+      };
+    </script>
+    <link rel="stylesheet" href="background-video.css">
+    <script src="background-video.js"></script>
+    <style>
+      * {
+        margin: 0
+      }
+
+      body {
+        font-family: sans-serif
+      }
+
+      div {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center
+      }
+
+      h1 {
+        box-sizing: border-box;
+        max-width: 80%;
+        font-size: 25px;
+        width: 600px;
+        height: 450px;
+        color: #00d234;
+        background: blue;
+        padding: 100px 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Background Video</h1>
+    </div>
+  </body>
+</html>

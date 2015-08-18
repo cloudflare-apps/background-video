@@ -1,0 +1,72 @@
+{
+  "resources": {
+    "head": [
+      {
+        "type": "style",
+        "src": "./background-video.css"
+      },
+      {
+        "type": "script",
+        "src": "./background-video.js"
+      }
+    ]
+  },
+  "options": {
+    "properties": {
+      "url": {
+        "order": 1,
+        "title": "URL",
+        "description": "The URL of the YouTube video to use as a background.",
+        "type": "string",
+        "default": "https://www.youtube.com/watch?v=AXwk0d1LkY8"
+      },
+      "selector": {
+        "order": 2,
+        "title": "Location",
+        "description": "Select the part of the page to set the video background.",
+        "type": "string",
+        "format": "selector",
+        "default": "body"
+      },
+      "aspectRatio": {
+        "order": 3,
+        "title": "Aspect ratio",
+        "description": "Setting this allows the video to be resized to best fit the space it’s in.",
+        "type": "string",
+        "enum": [
+          "16:9",
+          "16:10",
+          "4:3",
+          "64:27",
+          "1:1",
+          "5:4",
+          "21:9",
+          "9:16",
+          "custom"
+        ],
+        "enumNames": {
+          "16:9": "16:9 (TV)",
+          "16:10": "16:10 (Widescreen Computer)",
+          "4:3": "4:3 (Old TV)",
+          "64:27": "64:27 (Widescreen Film)",
+          "1:1": "1:1 (Vine, Instagram)",
+          "5:4": "5:4",
+          "21:9": "21:9",
+          "9:16": "9:16",
+          "custom": "Custom"
+        },
+        "default": "16:9"
+      },
+      "customAspectRatio": {
+        "order": 4,
+        "showIf": {
+          "aspectRatio": "custom"
+        },
+        "title": "Custom aspect ratio",
+        "description": "Enter a custom aspect ratio in the format <strong>WIDTH:HEIGHT</strong>.",
+        "type": "string",
+        "default": "16:9"
+      }
+    }
+  }
+}
