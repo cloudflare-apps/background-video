@@ -1,5 +1,7 @@
 *[data-eager-background-video-app-location] {
-  background: transparent !important
+  background-color: transparent !important;
+  background-image: -webkit-linear-gradient(transprent, transparent) !important;
+  background-image: linear-gradient(transprent, transparent) !important;
 }
 
 *[data-eager-background-video-app-location][data-eager-background-video-app-css-position="static"],
