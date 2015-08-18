@@ -9,7 +9,7 @@
     return;
   }
 
-  if (window.onYouTubeIframeAPIReady) {
+  if (window.onYouTubeIframeAPIReady && location.href !== 'https://eager.works/preview.html#preview') {
     if (window.console && window.console.error) {
       console.error('A YouTube video on this page is already setting `onYouTubeIframeAPIReady`, so the Eager Background Video app is not loading in order to prevent a collision.');
     }
