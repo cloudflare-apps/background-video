@@ -156,8 +156,8 @@
 
             location.setAttribute('data-eager-background-video-state', 'loading');
 
-            player.playVideo();
             player.mute();
+            player.playVideo();
 
             onPlayerStateChange = function(e) {
               if (e.data === 1) {
