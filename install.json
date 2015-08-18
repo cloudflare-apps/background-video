@@ -18,7 +18,7 @@
         "title": "URL",
         "description": "The URL of the YouTube video to use as a background.",
         "type": "string",
-        "default": "https://www.youtube.com/watch?v=AXwk0d1LkY8"
+        "default": "https://www.youtube.com/watch?v=qREKP9oijWI"
       },
       "selector": {
         "order": 2,
@@ -26,7 +26,7 @@
         "description": "Select the part of the page to set the video background.",
         "type": "string",
         "format": "selector",
-        "default": "body"
+        "default": "html"
       },
       "aspectRatio": {
         "order": 3,
