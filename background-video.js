@@ -1,7 +1,7 @@
 (function(){
   if (!document.addEventListener || !window.JSON) return;
 
-  var options, _i, aspectRatio, parseURL, setStyles, init;
+  var options, _i, aspectRatio, parseURL, setStyles, init, addYouTubeCb;
 
   options = INSTALL_OPTIONS;
 
@@ -9,11 +9,17 @@
     return;
   }
 
-  if (window.onYouTubeIframeAPIReady && location.href !== 'https://eager.works/preview.html#preview') {
-    if (window.console && window.console.error) {
-      console.error('A YouTube video on this page is already setting `onYouTubeIframeAPIReady`, so the Eager Background Video app is not loading in order to prevent a collision.');
+  addYouTubeCb = function(fn) {
+    var existing;
+
+    existing = window.onYouTubeIframeAPIReady;
+
+    window.onYouTubeIframeAPIReady = function(){
+      if (existing)
+        existing();
+
+      fn();
     }
-    return;
   }
 
   _i = function(p, v) {
@@ -129,7 +135,7 @@
       return;
     }
 
-    src = '//www.youtube-nocookie.com/embed/' + info.id +
+    src = '//www.youtube.com/embed/' + info.id +
       '?rel=0' +
       '&enablejsapi=1' +
       '&autoplay=1' +
@@ -148,7 +154,7 @@
     script.src = "//www.youtube.com/iframe_api";
     document.head.appendChild(script);
 
-    window.onYouTubeIframeAPIReady = function() {
+    addYouTubeCb(function() {
       var player = new YT.Player('eager-background-video-app-youtube-iframe', {
         events: {
           onReady: function() {
@@ -185,7 +191,7 @@
           }
         }
       });
-    };
+    });
 
     location.setAttribute('data-eager-background-video-app-location', '');
     setStyles(location, iframe);
