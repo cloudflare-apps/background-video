@@ -87,7 +87,7 @@
   setStyles = function(location, iframe) {
     var locationHeight, locationWidth, locationAspectRatio, cssText, videoWidth, videoHeight;
 
-    location.setAttribute('data-eager-background-video-app-css-position', getComputedStyle(location).position);
+    location.setAttribute('data-cloudflare-background-video-app-css-position', getComputedStyle(location).position);
 
     locationHeight = location.clientHeight;
     locationWidth = location.clientWidth;
@@ -146,8 +146,8 @@
       '&iv_load_policy=3'
     ;
 
-    el = document.createElement('eager-background-video-app-element');
-    el.innerHTML = '<iframe id="eager-background-video-app-youtube-iframe" type="text/html" src="' + src +'" frameborder="0" allowTransparency="true" allowfullscreen></iframe>';
+    el = document.createElement('cloudflare-background-video-app-element');
+    el.innerHTML = '<iframe id="cloudflare-background-video-app-youtube-iframe" type="text/html" src="' + src +'" frameborder="0" allowTransparency="true" allowfullscreen></iframe>';
     iframe = el.querySelector('iframe');
 
     script = document.createElement('script');
@@ -155,23 +155,23 @@
     document.head.appendChild(script);
 
     addYouTubeCb(function() {
-      var player = new YT.Player('eager-background-video-app-youtube-iframe', {
+      var player = new YT.Player('cloudflare-background-video-app-youtube-iframe', {
         events: {
           onReady: function() {
             var playerState, onPlayerStateChange, stateInterval;
 
-            location.setAttribute('data-eager-background-video-state', 'loading');
+            location.setAttribute('data-cloudflare-background-video-state', 'loading');
 
             player.mute();
             player.playVideo();
 
             onPlayerStateChange = function(e) {
               if (e.data === 1) {
-                location.setAttribute('data-eager-background-video-state', 'playing');
+                location.setAttribute('data-cloudflare-background-video-state', 'playing');
               } else if (e.data === 3) {
-                location.setAttribute('data-eager-background-video-state', 'buffering');
+                location.setAttribute('data-cloudflare-background-video-state', 'buffering');
               } else {
-                location.setAttribute('data-eager-background-video-state', 'loading');
+                location.setAttribute('data-cloudflare-background-video-state', 'loading');
               }
             };
 
@@ -193,7 +193,7 @@
       });
     });
 
-    location.setAttribute('data-eager-background-video-app-location', '');
+    location.setAttribute('data-cloudflare-background-video-app-location', '');
     setStyles(location, iframe);
     location.appendChild(el);
 
