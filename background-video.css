@@ -1,15 +1,15 @@
-*[data-eager-background-video-app-location] {
+*[data-cloudflare-background-video-app-location] {
   background-color: transparent !important;
   background-image: -webkit-linear-gradient(transparent, transparent) !important;
   background-image: linear-gradient(transparent, transparent) !important;
 }
 
-*[data-eager-background-video-app-location][data-eager-background-video-app-css-position="static"],
-*[data-eager-background-video-app-location][data-eager-background-video-app-css-position="relative"] {
+*[data-cloudflare-background-video-app-location][data-cloudflare-background-video-app-css-position="static"],
+*[data-cloudflare-background-video-app-location][data-cloudflare-background-video-app-css-position="relative"] {
   position: relative !important
 }
 
-eager-background-video-app-element {
+cloudflare-background-video-app-element {
   pointer-events: none !important;
   -webkit-user-select: none !important;
   -moz-user-select: none !important;
@@ -25,7 +25,7 @@ eager-background-video-app-element {
   left: 0 !important
 }
 
-eager-background-video-app-element iframe#eager-background-video-app-youtube-iframe {
+cloudflare-background-video-app-element iframe#cloudflare-background-video-app-youtube-iframe {
   transition: opacity .3s ease !important;
   opacity: 0 !important;
   background: #000 !important;
@@ -36,15 +36,15 @@ eager-background-video-app-element iframe#eager-background-video-app-youtube-ifr
   height: 100%
 }
 
-*[data-eager-background-video-app-location][data-eager-background-video-state="loading"] eager-background-video-app-element iframe#eager-background-video-app-youtube-iframe {
+*[data-cloudflare-background-video-app-location][data-cloudflare-background-video-state="loading"] cloudflare-background-video-app-element iframe#cloudflare-background-video-app-youtube-iframe {
   opacity: 0 !important
 }
 
-*[data-eager-background-video-app-location][data-eager-background-video-state="playing"] eager-background-video-app-element iframe#eager-background-video-app-youtube-iframe {
+*[data-cloudflare-background-video-app-location][data-cloudflare-background-video-state="playing"] cloudflare-background-video-app-element iframe#cloudflare-background-video-app-youtube-iframe {
   opacity: 1 !important
 }
 
-*[data-eager-background-video-app-location][data-eager-background-video-state="buffering"] eager-background-video-app-element iframe#eager-background-video-app-youtube-iframe {
+*[data-cloudflare-background-video-app-location][data-cloudflare-background-video-state="buffering"] cloudflare-background-video-app-element iframe#cloudflare-background-video-app-youtube-iframe {
   transition: opacity .3s .5s ease !important;
   opacity: 1 !important
 }
