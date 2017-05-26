@@ -25,7 +25,7 @@ cloudflare-background-video-app-element {
   left: 0 !important
 }
 
-cloudflare-background-video-app-element iframe#cloudflare-background-video-app-youtube-iframe {
+cloudflare-background-video-app-element #cloudflare-background-video-app-youtube-iframe {
   transition: opacity .3s ease !important;
   opacity: 0 !important;
   background: #000 !important;
@@ -36,15 +36,15 @@ cloudflare-background-video-app-element iframe#cloudflare-background-video-app-y
   height: 100%
 }
 
-*[data-cloudflare-background-video-app-location][data-cloudflare-background-video-state="loading"] cloudflare-background-video-app-element iframe#cloudflare-background-video-app-youtube-iframe {
+*[data-cloudflare-background-video-app-location][data-cloudflare-background-video-state="loading"] cloudflare-background-video-app-element #cloudflare-background-video-app-youtube-iframe {
   opacity: 0 !important
 }
 
-*[data-cloudflare-background-video-app-location][data-cloudflare-background-video-state="playing"] cloudflare-background-video-app-element iframe#cloudflare-background-video-app-youtube-iframe {
+*[data-cloudflare-background-video-app-location][data-cloudflare-background-video-state="playing"] cloudflare-background-video-app-element #cloudflare-background-video-app-youtube-iframe {
   opacity: 1 !important
 }
 
-*[data-cloudflare-background-video-app-location][data-cloudflare-background-video-state="buffering"] cloudflare-background-video-app-element iframe#cloudflare-background-video-app-youtube-iframe {
+*[data-cloudflare-background-video-app-location][data-cloudflare-background-video-state="buffering"] cloudflare-background-video-app-element #cloudflare-background-video-app-youtube-iframe {
   transition: opacity .3s .5s ease !important;
   opacity: 1 !important
 }

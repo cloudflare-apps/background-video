@@ -2,6 +2,7 @@
   if (!document.addEventListener || !window.JSON) return
 
   var options = INSTALL_OPTIONS
+  var element
 
   if (!options.url || !options.selector) {
     return
@@ -113,19 +114,14 @@
   }
 
   function init () {
-    var info, location, src, script, el, iframe
+    var info = parseURL(options.url)
 
-    info = parseURL(options.url)
-    if (!info || info.type !== 'watch') {
-      return
-    }
+    if (!info || info.type !== 'watch') return
 
-    location = document.querySelector(options.selector)
-    if (!location) {
-      return
-    }
+    var location = document.querySelector(options.selector)
+    if (!location) return
 
-    src = '//www.youtube.com/embed/' + info.id +
+    var src = '//www.youtube.com/embed/' + info.id +
       '?rel=0' +
       '&enablejsapi=1' +
       '&autoplay=1' +
@@ -135,12 +131,14 @@
       '&playlist=' + info.id +
       '&iv_load_policy=3'
 
-    el = document.createElement('cloudflare-background-video-app-element')
-    el.innerHTML = '<iframe id="cloudflare-background-video-app-youtube-iframe" type="text/html" src="' + src + '" frameborder="0" allowTransparency="true" allowfullscreen></iframe>'
-    iframe = el.querySelector('iframe')
+    element = document.createElement('cloudflare-background-video-app-element')
+    element.innerHTML = '<iframe id="cloudflare-background-video-app-youtube-iframe" type="text/html" src="' + src + '" frameborder="0" allowTransparency="true" allowfullscreen></iframe>'
 
-    script = document.createElement('script')
+    var iframe = element.querySelector('iframe')
+
+    var script = document.createElement('script')
     script.src = '//www.youtube.com/iframe_api'
+
     document.head.appendChild(script)
 
     addYouTubeCb(function () {
@@ -183,7 +181,7 @@
 
     location.setAttribute('data-cloudflare-background-video-app-location', '')
     setStyles(location, iframe)
-    location.appendChild(el)
+    location.appendChild(element)
 
     window.addEventListener('resize', function () {
       setStyles(location, iframe)
