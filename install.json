@@ -3,11 +3,11 @@
     "head": [
       {
         "type": "style",
-        "src": "./background-video.css"
+        "src": "./source/app.css"
       },
       {
         "type": "script",
-        "src": "./background-video.js"
+        "src": "./source/app.js"
       }
     ]
   },

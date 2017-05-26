@@ -29,7 +29,7 @@ cloudflare-background-video-app-element iframe#cloudflare-background-video-app-y
   transition: opacity .3s ease !important;
   opacity: 0 !important;
   background: #000 !important;
-  position: absolute !important;
+  position: fixed !important;
   top: 0;
   left: 0;
   width: 100%;
